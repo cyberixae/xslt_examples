@@ -13,7 +13,9 @@
        work, as the xinclude does not get expanded when
        the xslt reads it with document() -->
   <xsl:variable name="cssdata" select="document($xmlfile)" />
-  <xsl:copy-of select="$cssdata" />
+  <style>
+    <xsl:copy-of select="$cssdata" />
+  </style>
 </xsl:template>
 
 <xsl:template match="@*|node()">
