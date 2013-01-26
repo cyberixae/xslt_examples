@@ -51,14 +51,13 @@
 
 <!-- main -->
 <xsl:template match="/">
-  <xsl:variable name="xfiltered">
+  <xsl:variable name="filtered">
     <xsl:call-template name="filter">
       <xsl:with-param name="input" select="/" />
     </xsl:call-template>
   </xsl:variable>
-  <xsl:variable name="filtered" select="exsl:node-set($xfiltered)" />
   <xsl:call-template name="tohtml">
-    <xsl:with-param name="input" select="$filtered" />
+    <xsl:with-param name="input" select="exsl:node-set($filtered)" />
   </xsl:call-template>
 </xsl:template>
 
