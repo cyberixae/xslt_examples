@@ -23,10 +23,10 @@
     </xsl:copy>
 </xsl:template>
 <xsl:template mode="filter" match="node()[@type='banana']" />
-<xsl:variable name="xfiltered">
+<xsl:template name="filter">
+  <xsl:param name="input" />
   <xsl:apply-templates mode="filter" select="$input" />
-</xsl:variable>
-<xsl:variable name="filtered" select="exsl:node-set($xfiltered)" />
+</xsl:template>
 
 <!-- htmlifier -->
 <xsl:template mode="tohtml" match="/">
@@ -44,14 +44,22 @@
   <li><xsl:value-of select="@type" /></li><xsl:text>
 </xsl:text>
 </xsl:template>
-<xsl:variable name="xhtml">
-  <xsl:apply-templates mode="tohtml" select="$filtered" />
-</xsl:variable>
+<xsl:template name="tohtml">
+  <xsl:param name="input" />
+  <xsl:apply-templates mode="tohtml" select="$input" />
+</xsl:template>
 
 <!-- main -->
-<xsl:variable name="input" select="/" />
 <xsl:template match="/">
-  <xsl:copy-of select="$xhtml" />
+  <xsl:variable name="xfiltered">
+    <xsl:call-template name="filter">
+      <xsl:with-param name="input" select="/" />
+    </xsl:call-template>
+  </xsl:variable>
+  <xsl:variable name="filtered" select="exsl:node-set($xfiltered)" />
+  <xsl:call-template name="tohtml">
+    <xsl:with-param name="input" select="$filtered" />
+  </xsl:call-template>
 </xsl:template>
 
 </xsl:stylesheet>
