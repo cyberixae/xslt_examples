@@ -1,6 +1,5 @@
 #!/usr/bin/python
 
-
 from lxml import etree
 
 xsltf = open('main.xsl')
@@ -12,4 +11,8 @@ tree = etree.parse(f)
 
 transform = etree.XSLT(xslt_tree)
 
-print transform(tree)
+transformed = transform(tree)
+
+output = etree.tostring(transformed)
+
+print output
