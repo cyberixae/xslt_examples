@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<basket>
+	<fruit type="apple" />
+	<fruit type="apple" />
+	<fruit type="pear" />
+	<fruit type="apple" />
+	<fruit type="banana" />
+	<fruit type="apple" />
+	<fruit type="banana" />
+</basket>
