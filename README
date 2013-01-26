@@ -1,0 +1,6 @@
+
+xslt_examples contains some XSLT examples:
+
+nodeset is a working example of transformation composition
+embed_css is an incomplete solution for embedding css content into html
+shorthand is an example of a short hand in match line that breaks the code
