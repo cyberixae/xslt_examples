@@ -50,6 +50,7 @@
 </xsl:template>
 
 <!-- main -->
+<xsl:output omit-xml-declaration="yes" />
 <xsl:template match="/">
   <xsl:variable name="filtered">
     <xsl:call-template name="filter">
