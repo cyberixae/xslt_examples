@@ -3,4 +3,4 @@ xslt_examples contains some XSLT examples:
 
 nodeset is a working example of transformation composition
 embed_css almost makes it possible to embed css content into html
-shorthand is an example of a match line shorthand that breaks the code
+shorthand shows how entities can be used to shorten match lines
