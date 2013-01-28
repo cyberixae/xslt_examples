@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!DOCTYPE style [
-  <!ENTITY props SYSTEM "test.css">
+  <!ENTITY cssdata SYSTEM "test.css">
 ]>
 <style>
-&props;</style>
+&cssdata;</style>
